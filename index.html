@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinuxPop — install</title>
+<style>
+  :root{ --ink:#0E1726; --mut:#5b6b7d; --accent:#2E63B8; --line:#e6ebf2; --bg:#f7f9fc; --code:#0d1726; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+  .wrap{max-width:760px;margin:0 auto;padding:56px 22px 80px}
+  h1{font-size:44px;margin:0 0 4px;letter-spacing:-.5px}
+  h1 .pop{color:var(--accent)}
+  .sub{color:var(--mut);font-size:18px;margin:0 0 36px}
+  h2{font-size:20px;margin:38px 0 10px}
+  p{color:#2c3a4a}
+  pre{background:var(--code);color:#e8eef7;border-radius:10px;padding:16px 18px;overflow:auto;font-size:14.5px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .pill{display:inline-block;background:#eaf0fb;color:var(--accent);font-size:12px;font-weight:700;
+        letter-spacing:.5px;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0}
+  a{color:var(--accent)}
+  .muted{color:var(--mut);font-size:14px}
+  footer{margin-top:48px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="pill">KDE Plasma 6 / Wayland · X11 · Flatpak</span>
+  <h1>Football<span class="pop">…</span>no — <span class="pop">LinuxPop</span></h1>
+  <p class="sub">A PopClip-style floating popup of context-aware actions for selected text —
+  search, open links/paths, send to an AI, encode/decode, translate, run commands — plus a
+  clipboard manager and a no-code button wizard.</p>
+
+  <h2>Install (one command)</h2>
+  <p>This adds the LinuxPop repo and installs the app, with automatic updates:</p>
+  <pre>flatpak install --from https://gaimsdevsoftware.github.io/linuxpop-flatpak/linuxpop.flatpakref</pre>
+  <p class="muted">First time using Flatpak? Make sure the Flathub runtimes are available:<br>
+  <code>flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code></p>
+
+  <h2>Run</h2>
+  <pre>flatpak run io.github.GaimsDevSoftware.LinuxPop</pre>
+
+  <h2>Update / uninstall</h2>
+  <pre>flatpak update io.github.GaimsDevSoftware.LinuxPop
+flatpak uninstall io.github.GaimsDevSoftware.LinuxPop</pre>
+
+  <div class="card">
+    <h2 style="margin-top:0">Prefer a single file?</h2>
+    <p>Grab the <code>.flatpak</code> bundle from
+    <a href="https://github.com/GaimsDevSoftware/linuxpop/releases">GitHub Releases</a> and install it offline:</p>
+    <pre>flatpak install --bundle linuxpop.flatpak</pre>
+  </div>
+
+  <h2>Add the repo manually</h2>
+  <pre>flatpak remote-add --if-not-exists linuxpop https://gaimsdevsoftware.github.io/linuxpop-flatpak/linuxpop.flatpakrepo
+flatpak install linuxpop io.github.GaimsDevSoftware.LinuxPop</pre>
+
+  <footer>
+    Free &amp; open source · MIT · <a href="https://github.com/GaimsDevSoftware/linuxpop">source on GitHub</a><br>
+    Self-distributed by GaimsDev. The repo is GPG-signed.
+  </footer>
+</div>
+</body>
+</html>
